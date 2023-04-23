@@ -1,0 +1,128 @@
+body {
+  background-color: #15282A;
+}
+
+h1 {
+  background: linear-gradient(to right, #E2DACE, #55c3e1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 1rem;
+  width: 100%;
+  background-color: #15282A;
+  z-index: 1;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1); /* 수정된 부분 */
+}
+
+.app-header h1 {
+  margin: 0;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: left;
+  color: #E2DACE;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.05);
+}
+
+.newmemo-btn {
+  position: absolute;
+  top: 25%; /* 버튼의 중앙이 헤더의 중앙에 오도록 설정합니다. */
+  right: 1rem;
+  transform: translateY(-50%); /* 버튼의 높이의 절반만큼 위로 이동합니다. */
+  background-color: #15282A;
+  color: #E2DACE;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  box-sizing: border-box;
+  font-family: 'Noto Sans KR', sans-serif;
+  z-index: 1;
+}
+
+.newmemo-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.input-area {
+  position: fixed;
+  left: 0;
+  top: 4rem;
+  bottom: 0;
+  width: calc(100% - 25rem); /* 리스트 영역의 크기만큼 제외한 값 */
+  background-color: #15282A;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+
+.list-area {
+  position: fixed;
+  right: 0;
+  top: 4rem;
+  bottom: 0;
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+
+.memo-item {
+  color: #929B95;
+  border: 1px solid #235C59;
+  margin: 1rem 0;
+  padding: 5px 15px 5px 15px;
+  width: 350px; /* width 값을 80%로 조정 */
+  overflow: hidden; /* 내용이 넘치는 경우 숨기기 */
+  white-space: nowrap; /* 내용이 한 줄을 넘어가는 경우 줄바꿈 하지 않기 */
+  text-overflow: ellipsis; /* 내용이 넘치는 경우 생략 부호로 표시 */
+}
+
+
+
+textarea {
+  width: 95%;
+  height: 80vh;
+  resize: none;
+  background-color: #15282A;
+  color: #E2DACE;
+  font-size: 3rem; /* 폰트 사이즈 */
+  padding: 1rem;
+  border: none;
+  border-radius: 0;
+  box-sizing: border-box;
+  font-family: 'Noto Sans KR', sans-serif; /* 폰트 패밀리 */
+}
+
+button[type="submit"],
+button {
+  background-color: #15282A;
+  color: #E2DACE;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  border-radius: 0;
+  cursor: pointer;
+  box-sizing: border-box;
+  font-family: 'Noto Sans KR', sans-serif; /* 폰트 패밀리 */
+
+}
+
+
+textarea:focus,
+button:focus {
+  outline: none;
+} 
+
+.memo-item.selected {
+  border: 2px solid;
+  border-image: linear-gradient(to right, #59C3BE, #e7bda0);
+  border-image-slice: 1;
+  border-image-outset: 0px;
+}
+
